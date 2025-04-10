@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Restart</title>
+    <link rel="icon" type="image/svg+xml" href="Imagenes/versión 2 blanco.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="sobre.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <header class="menu-container fixed-top">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-6 d-flex align-items-center">
+                    <a href="index.html">
+                        <img class="logo animate__animated animate__rubberBand animate__infinite animate__slow" src="Imagenes/versión 1 blanco.png" alt="Logo">
+                    </a>
+                </div>
+                <div class="col-6 text-end">
+                    <input type="checkbox" id="check">
+                    <label for="check" class="mostrar-menu">&#8801;</label>
+                    <nav class="menu">
+                        <a href="index.html">Inicio</a>
+                        <a href="hacemos.html">nosotros</a>
+                        <a href="eventos.html">Contenido</a>
+                        <label for="check" class="esconder-menu">&#215;</label>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>   
+
+    <section class="foto-papel-section">
+        <div class="foto-papel-container" id="gallery1">
+            <div class="foto-papel" onclick="openModal(0, 'gallery1')">
+                <img src="Imagenes/breack/2.jpg" alt="Fotografía 1">
+                <div class="foto-descripcion">Break Dance</div>
+            </div>
+            <div class="foto-papel" onclick="openModal(0, 'gallery1')">
+                <img src="Imagenes/breack/5.jpg" alt="Fotografía 1">
+                <div class="foto-descripcion">Break Dance</div>
+            </div>
+            <div class="foto-papel" onclick="openModal(0, 'gallery1')">
+                <img src="Imagenes/breack/6.jpg" alt="Fotografía 1">
+                <div class="foto-descripcion">Break Dance</div>
+            </div>
+            <div class="foto-papel" onclick="openModal(0, 'gallery1')">
+                <img src="Imagenes/salidas/1.jpeg" alt="Fotografía 1">
+                <div class="foto-descripcion">Salidas</div>
+            </div>
+            <div class="foto-papel" onclick="openModal(0, 'gallery1')">
+                <img src="Imagenes/salidas/2.jpeg" alt="Fotografía 1">
+                <div class="foto-descripcion">Salidas</div>
+            </div>
+            <div class="foto-papel" onclick="openModal(0, 'gallery1')">
+                <img src="Imagenes/salidas/3.jpeg" alt="Fotografía 1">
+                <div class="foto-descripcion">Salidas</div>
+            </div>
+            
+            <div class="foto-papel-container" id="gallery2">
+                <div class="foto-papel" onclick="openModal(0, 'gallery2')">
+                    <img src="Imagenes/cerezos/1.PNG" alt="Fotografía 1">
+                    <div class="foto-descripcion"><p>Los cerezos</p></div>
+                </div>
+            </div>
+            <div class="foto-papel-container" id="gallery2">
+                <div class="foto-papel" onclick="openModal(0, 'gallery2')">
+                    <img src="Imagenes/cerezos/2.PNG" alt="Fotografía 1">
+                    <div class="foto-descripcion"><p>Los cerezos</p></div>
+                </div>
+            </div>
+            <div class="foto-papel-container" id="gallery2">
+                <div class="foto-papel" onclick="openModal(0, 'gallery2')">
+                    <img src="Imagenes/cerezos/3.PNG" alt="Fotografía 1">
+                    <div class="foto-descripcion"><p>Los cerezos</p></div>
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+    
+    
+    
+    
+    
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="modal-arrow left-arrow" onclick="changePhoto(-1)">&#10094;</span>
+        <span class="modal-arrow right-arrow" onclick="changePhoto(1)">&#10095;</span>
+        <img class="modal-content" id="imgModal">
+    </div>    
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="imgModal">
+    </div>
+
+
+    
+    
+    <footer class="footer">
+        <div class="footer-content">
+          
+          <div class="footer-section">
+            <h5>Contacto</h5>
+            <a href="mailto:Therestart20@gmail.com" class="footer-button">📧 Enviar Email</a>
+          </div>
+      
+          <div class="footer-section">
+            <h5>Redes sociales</h5>
+            <a href="https://www.instagram.com/therestart20?igsh=MW5icXpoaWx3ZnBsZA%3D%3D" class="footer-button">📸 Entra aqui</a>
+          </div>
+      
+          <div class="footer-section">
+            <h5>Nuestro Socio</h5>
+            <div class="partners">
+              <img src="Imagenes/serrat.png" alt="Logo 1" class="partner-logo">
+            </div>
+          </div>
+      
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 Serrat Studio. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+
+    
+
+    <!-- Modal para ver en pantalla completa -->
+    <div id="fullscreen-modal" class="fullscreen-modal" onclick="closeModal()">
+        <span class="fullscreen-close">&times;</span>
+        <div class="fullscreen-content">
+            <img id="modal-img" style="display: none;">
+            <video id="modal-video" controls style="display: none;"></video>
+        </div>
+    </div>
+
+    <script>
+        let lastScroll = 0;
+        const header = document.querySelector('.menu-container');
+    
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll <= 0) {
+                header.style.top = '0';
+                return;
+            }
+            if (currentScroll > lastScroll) {
+                header.style.top = '-100px';
+            } else {
+                header.style.top = '0';
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+<script>
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+  
+    modal.addEventListener('hidden.bs.modal', function () {
+      modalVideo.pause();
+      modalVideo.currentTime = 0;
+    });
+  </script>
+
+
+    <script>
+        function openModal(element) {
+            const modal = document.getElementById('fullscreen-modal');
+            const modalImg = document.getElementById('modal-img');
+            const modalVideo = document.getElementById('modal-video');
+            
+            if (element.tagName === 'IMG') {
+                modalImg.src = element.src;
+                modalImg.style.display = 'block';
+                modalVideo.style.display = 'none';
+            } else if (element.tagName === 'VIDEO') {
+                modalVideo.src = element.querySelector('source').src;
+                modalVideo.style.display = 'block';
+                modalImg.style.display = 'none';
+            }
+            modal.classList.add('active');
+        }
+        function closeModal() {
+            const modal = document.getElementById('fullscreen-modal');
+            modal.classList.remove('active');
+        }
+    </script>
+
+<script>
+    let currentPhoto = 0;
+    let images = [];
+
+    function openModal(index, galleryId) {
+        const gallery = document.getElementById(galleryId);
+        const galleryImages = gallery.querySelectorAll('img');
+        
+        images = Array.from(galleryImages).map(img => img.src);
+        currentPhoto = index;
+
+        document.getElementById('myModal').style.display = "block";
+        document.getElementById('imgModal').src = images[currentPhoto];
+    }
+
+    function closeModal() {
+        document.getElementById('myModal').style.display = "none";
+    }
+
+    function changePhoto(direction) {
+        currentPhoto += direction;
+        if (currentPhoto < 0) {
+            currentPhoto = images.length - 1;
+        } else if (currentPhoto >= images.length) {
+            currentPhoto = 0;
+        }
+        document.getElementById('imgModal').src = images[currentPhoto];
+    }
+</script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
+</body>
+</html>
