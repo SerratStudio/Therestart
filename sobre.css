@@ -512,6 +512,7 @@
     background-color: #f6f6f6;
     padding: 120px 20px;
     min-height: 100vh;
+    width: 100%;
 }
 
 .foto-papel-container {
@@ -640,51 +641,62 @@
 
 /* Responsive ajustes */
 @media (max-width: 768px) {
+    .foto-papel-section{
+        width: 100%;
+    }
     .foto-papel {
-        max-width: 320px;
+        max-width: 240px;
+        width: 80%;
+        margin: 10px auto;
     }
     
     .modal-content {
-        max-width: 95%;
-        max-height: 70vh;
+        max-width: 90%;
+        max-height: 65vh;
         object-fit: cover;
     }
 
     .close {
-        top: 15px;
-        right: 15px;
-        font-size: 30px;
+        top: 12px;
+        right: 12px;
+        font-size: 28px;
     }
 
     .modal-arrow {
-        font-size: 40px;
-        padding: 10px;
+        font-size: 32px;
+        padding: 8px;
     }
 }
 
 @media (max-width: 480px) {
+
+    .foto-papel-section{
+        width: 100%;
+    }
+
     .foto-papel {
-        max-width: 90%;
+        max-width: 180px;
+        width: 85%;
+        margin: 8px auto;
     }
 
     .modal-content {
-        max-width: 95%;
-        max-height: 65vh;
+        max-width: 90%;
+        max-height: 60vh;
         object-fit: cover;
-
     }
 
     .close {
         top: 10px;
         right: 10px;
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .modal-arrow {
-        font-size: 30px;
+        font-size: 28px;
+        padding: 6px;
     }
 }
-
 
 
 
@@ -884,6 +896,15 @@
     font-weight: bold;
 
 }
+
+.about-text3 p {
+    font-size: 19px;
+    color: #0986a2;
+    margin-bottom: 20px;
+    font-family: confortaa;
+
+}
+
 
 .about-text1 p {
     font-size: 18px;
