@@ -51,42 +51,51 @@
 
 
       
-    <section class="container-fluid trailer-section">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-12 col-md-8 text-center trailer-text animate-text">
-            <h2>TRAILER</h2>
-            <p>"El arte que transforma a los jóvenes"
-              (Proximamente)
-            </p>
-          </div>
-          <div class="col-12 col-md-10 trailer-video animate-video" data-bs-toggle="modal" data-bs-target="#videoModal">
-            <div class="ratio ratio-16x9">
-<!--               <video class="mi-video" autoplay muted loop>
-                <source src="videos/video1.mp4" type="video/mp4">
-              </video>
- -->            
-            <img src="Imagenes/teaser.JPG" alt=""></div>
-          </div>
+  <section class="container-fluid trailer-section">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-md-8 text-center trailer-text animate-text">
+        <h2>TRAILER</h2>
+        <p>"El arte que transforma a los jóvenes"  
+          (Próximamente)
+        </p>
+      </div>
+      <div class="col-12 col-md-10 trailer-video animate-video" data-bs-toggle="modal" data-bs-target="#videoModal">
+        <div class="ratio ratio-16x9">
+          <iframe 
+            class="mi-video"
+            src="https://www.youtube.com/embed/_Ns3Vzzwobg?autoplay=1&mute=1&loop=1&playlist=_Ns3Vzzwobg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
         </div>
-      </section>
-      
-      <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content bg-dark">
-            <div class="modal-header border-0">
-              <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-0">
-              <div class="ratio ratio-16x9">
-                <video id="modalVideo" controls>
-                  <source src="" type="video/mp4">
-                </video>
-              </div>
-            </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="ratio ratio-16x9">
+            <iframe 
+              id="modalVideo"
+              src="https://www.youtube.com/embed/_Ns3Vzzwobg?autoplay=1"
+              title="YouTube video"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
       </div>
-      
+    </div>
+  </div>
+        
       <div class="divider">
         <div class="divider-line"></div>
       </div>
